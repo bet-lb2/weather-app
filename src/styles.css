@@ -1,7 +1,17 @@
+:root {
+    --main-color: #333;
+    --sub-color: #ccc;
+    --body-height: 100vh;
+    --header-height: 7.5rem;
+    --main-height: calc(var(--body-height) - var(--header-height));
+    --input-background-color: #aaa;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 a {
@@ -10,4 +20,71 @@ a {
 
 ul {
     list-style: none;
+}
+
+body {
+    height: var(--body-height);
+}
+
+#header {
+    height: 7.5rem;
+    font-size: 1.5rem;
+    color: var(--sub-color);
+    background-color: var(--main-color);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#main {
+    background-color: var(--sub-color);
+    height: var(--main-height);
+    font-size: 1.05rem;
+    padding-top: 2.5rem;
+}
+
+#main #search-box {
+    width: max-content;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+#main input {
+    background-color: var(--input-background-color);
+}
+
+#main button {
+    background-color: var(--main-color);
+    color: white;
+}
+
+#main input, button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#main #output {
+    width: 20rem;
+    height: max-content;
+    background-color: var(--main-color);
+    margin: auto;
+    border-radius: 5px;
+    visibility: hidden;
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+#main #output .resolvedAddress {
+    color: var(--sub-color)
+}
+
+#main #output :not(.resolvedAddress){
+    color: white;
+}
+
+#main #output .resolvedAddress, .temperature {
+    font-size: 2.5rem;
 }
